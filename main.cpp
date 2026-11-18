@@ -82,7 +82,21 @@ int main() {
                 cout << "Pirkimo kursas:   1.00 EUR = " << pirkti << " " << valiuta << endl;
                 cout << "Pardavimo kursas: 1.00 EUR = " << parduoti << " " << valiuta << endl;
                 break;
+            case 2: {
+                double suma;
+                cout << "Iveskite EUR suma: ";
+                cin >> suma;
 
+                if (suma <= 0) {
+                    cout << "KLAIDA: Suma turi buti teigiama!" << endl;
+                    break;
+                }
+                cout << "\n--- PIRKIMAS ---" << endl;
+                cout << "Pradine suma: " << suma << " EUR" << endl;
+                cout << "Valiuta: " << valiuta << endl;
+                cout << "Gauta suma: " << suma * pirkti << " " << valiuta << endl;
+                break;
+            }
         }
         return 0;
     }
