@@ -75,6 +75,15 @@ int main() {
 
         cout << fixed << setprecision(2);
 
+        switch (meniu) {
+            case 1:
+                cout << "\n--- KURSO PALYGINIMAS ---" << endl;
+                cout << "Bendras kursas:   1.00 EUR = " << bendras << " " << valiuta << endl;
+                cout << "Pirkimo kursas:   1.00 EUR = " << pirkti << " " << valiuta << endl;
+                cout << "Pardavimo kursas: 1.00 EUR = " << parduoti << " " << valiuta << endl;
+                break;
+
+        }
+        return 0;
     }
-    return 0;
 }
