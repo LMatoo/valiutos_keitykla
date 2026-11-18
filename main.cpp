@@ -38,6 +38,7 @@ int main() {
             cout << "KLAIDA: Nera tokio pasirinkimo. Pasirinkite tarp 1-4" << endl;
             continue;
         }
+
         int pasirinkimas;
         cout << "\nPasirinkite valiuta:" << endl;
         cout << "1 - GBP (Didziosios Britanijos svaras)" << endl;
@@ -46,7 +47,7 @@ int main() {
         cout << "Jusu pasirinkimas: ";
         cin >> pasirinkimas;
 
-        double bendras = 0, pirkti = 0, parduoti = 0;
+       double bendras = 0, pirkti = 0, parduoti = 0;
         string valiuta = "";
 
         switch (pasirinkimas) {
@@ -82,6 +83,7 @@ int main() {
                 cout << "Pirkimo kursas:   1.00 EUR = " << pirkti << " " << valiuta << endl;
                 cout << "Pardavimo kursas: 1.00 EUR = " << parduoti << " " << valiuta << endl;
                 break;
+
             case 2: {
                 double suma;
                 cout << "Iveskite EUR suma: ";
@@ -97,7 +99,24 @@ int main() {
                 cout << "Gauta suma: " << suma * pirkti << " " << valiuta << endl;
                 break;
             }
+
+            case 3: {
+                double suma;
+                cout << "Iveskite " << valiuta << " suma: ";
+                cin >> suma;
+
+                if (suma <= 0) {
+                    cout << "KLAIDA: Suma turi buti teigiama!" << endl;
+                    break;
+                }
+                cout << "\n--- PARDAVIMAS ---" << endl;
+                cout << "Pradine suma: " << suma << " " << valiuta << endl;
+                cout << "Valiuta: " << valiuta << endl;
+                cout << "Gauta suma: " << suma / parduoti << " EUR" << endl;
+                break;
+            }
         }
-        return 0;
     }
+
+    return 0;
 }
